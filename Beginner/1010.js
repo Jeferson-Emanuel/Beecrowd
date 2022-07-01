@@ -1,8 +1,8 @@
 var input = require('fs').readFileSync('./dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-var line1 = lines.shift().split(' ');
-var line2 = lines.shift().split(' ');
+var line1 = lines.[0].split(' ');
+var line2 = lines.[1].split(' ');
 
 var codigoPeca1 = parseInt(line1[0]);
 var qtdPeca1 = parseInt(line1[1]);
