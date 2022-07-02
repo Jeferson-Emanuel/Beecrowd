@@ -1,24 +1,29 @@
 var input = require('fs').readFileSync('./dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-let numbers = lines.map((x) => parseInt(x));
-let even, odd, positive, negative = 0;
+const evenOdd = (p) => {
+    if(p%2===0){
+        even++;
+    }else{
+        odd++;
+    }
+};
 
-for(var i of numbers){
-    if(i>=0){
-        positive++;
-        if(i%2===0){
-            even++;
+let numbers = lines.map((x) => parseInt(x));
+let even=0, odd=0, positive=0, negative=0;
+
+for(let i=0; i<5; i++){
+    let n = numbers[i];
+    if(n>=0){
+        if(n!==0){
+            positive++;
+            evenOdd(n);
         }else{
-            odd++;
-        }
+            evenOdd(n);
+        }        
     }else{
         negative++;
-        if(i%2===0){
-            even++;
-        }else{
-            odd++;
-        }
+        evenOdd(n);
     }
 }
 
