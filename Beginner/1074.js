@@ -26,4 +26,3 @@ let [n] = value;
 for(let i=1; i<=n; i++){
     console.log(log(value[i]));
 };
-
